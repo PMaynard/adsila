@@ -1,0 +1,64 @@
+{{ partial "header.html" . }}
+
+{{ if (eq .Section "publication") }}
+
+<div class="full-page">
+    <h2>{{ .Title }}</h2>
+    <h3>{{ delimit .Params.authors ", " }}</h3>
+
+    <p>{{ .Params.abstract }}</p>
+
+    <p>{{ .Params.proceedings }} ({{ .Params.year }})</p>
+
+    <p>{{ delimit .Params.keywords ", " }}</p>
+
+    <p><span class="button {{ lower .Params.type }}">{{ .Params.type }}</span> [
+    	{{ if not (eq .Params.doi "") }}<a target="_BLANK" href="{{ .Params.doi }}">DOI</a>{{ end }}
+    	{{ if not (eq .Params.access_url "") }}<a target="_BLANK" href="{{ .Params.access_url }}">URL</a> {{ end }}
+    	{{ if not (eq .Params.pdf_url "") }}<a target="_BLANK" href="{{ .Params.pdf_url }}">PDF</a> {{ end }}
+    	{{ if not (eq .Params.slides "") }}<a target="_BLANK" href="{{ .Params.slides }}"> Slides</a>{{ end }}
+        {{ if (eq .Params.forthcoming "true") }}<i>Forthcoming</i> {{ end }}
+    ]</p>
+<pre>@{{ lower .Params.type }}{
+ author   = "{{ delimit .Params.authors ", " }}",
+ title 	  = "{{ .Title }}",
+ journal  = "{{ .Params.proceedings }}",
+ year 	  = "{{ .Params.year }}"{{ if not (eq .Params.doi "") }},
+ doi 	  = "{{ .Params.doi }}"{{ end }}{{ if not (eq .Params.access_url "") }},
+ url 	  = "{{ .Params.access_url }}"{{ end }}
+}</pre>
+{{ else }}
+<div class="full-page">
+{{ .Content }}
+</div>
+{{ end }}
+
+
+{{ partial "footer.html" . }}
+
+
+<!-- @article{einstein,
+    author =       "Albert Einstein",
+    title =        "{Zur Elektrodynamik bewegter K{\"o}rper}. ({German})
+        [{On} the electrodynamics of moving bodies]",
+    journal =      "Annalen der Physik",
+    volume =       "322",
+    number =       "10",
+    pages =        "891--921",
+    year =         "1905",
+    DOI =          "http://dx.doi.org/10.1002/andp.19053221004"
+}
+ 
+@book{latexcompanion,
+    author    = "Michel Goossens and Frank Mittelbach and Alexander Samarin",
+    title     = "The \LaTeX\ Companion",
+    year      = "1993",
+    publisher = "Addison-Wesley",
+    address   = "Reading, Massachusetts"
+}
+ 
+@misc{knuthwebsite,
+    author    = "Donald Knuth",
+    title     = "Knuth: Computers and Typesetting",
+    url       = "http://www-cs-faculty.stanford.edu/\~{}uno/abcde.html"
+} -->

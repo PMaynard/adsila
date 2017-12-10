@@ -1,0 +1,23 @@
+{{ partial "header" . }}
+
+<div class="full-page list">
+{{ if (eq .Section "publication") }}
+
+{{ range .Data.Pages.GroupByParam "year" "desc" }}
+<h3>{{ .Key }}</h3>
+    {{ range .Pages }}
+		<div class="list-items">
+			<div class="button {{ lower .Params.type }}">{{ .Params.type }}</div>
+			<div><a href="{{ .Permalink }}">{{ .Title }}</a> </div>
+		</div>
+    {{ end }}
+{{ end }}
+</div>
+
+{{ else }}
+TODO List for non-publications.
+{{ end }}
+
+
+
+{{ partial "footer" . }}

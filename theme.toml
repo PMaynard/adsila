@@ -1,0 +1,11 @@
+name = "adsila"
+license = "MIT"
+licenselink = "https://github.com/PMaynard/adsila/blob/master/LICENSE.md"
+description = "Simple theme with simple support for publications."
+tags = []
+features = []
+min_version = "0.25.1"
+
+[author]
+  name = "Peter Maynard"
+  homepage = "https://petermaynard.co.uk"

@@ -1,0 +1,95 @@
+body {
+	background-color: #fff;
+	color: #212121;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 18px;
+}
+
+a:link {
+	color: #920000;
+	text-decoration: none;
+}
+
+a:visited, a:active {
+	color: #920000;;
+}
+
+a:hover {
+	color: #E040FB;
+}
+
+img {
+    width: 100%; 
+    height: auto;
+}
+
+.wrapper {
+  max-width: 940px;
+  margin: 0 20px;
+  display: grid;
+  grid-gap: 0 25px;
+}
+
+.header a {
+	text-decoration: none;
+	font-family: 'Spectral SC', serif;
+	color: black;
+	text-align: center;
+}
+
+.subheader, .footer {
+	text-align: center;
+}
+
+.full-page, .list a {
+	color: #000;
+}
+
+.list-items {
+  display: flex;
+}
+
+.list-items>div {
+  margin-top: 10px;
+  margin-right: 10px;
+  align-items: center;
+  min-width: 100px;
+}
+
+.button {
+    border: none;
+    color: black;
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.journal {background-color: #2574FF66;}
+.book {background-color: #f44336cc;} 
+.conference {background-color: #AD57B666;} 
+.article {background-color: #e7e7e7; color: black;} 
+.thesis {background-color: #4CAF50;}
+
+pre {
+	font-size: 15px;
+	line-height: 25px;
+	white-space: pre-wrap;
+	white-space: -moz-pre-wrap
+	white-space: -pre-wrap;
+	white-space: -o-pre-wrap;
+	word-wrap: break-word;
+}
+
+@media screen and (min-width: 500px) {
+	.wrapper {
+		margin: 0 auto;
+		grid-template-columns: 1fr 2fr;
+		align-items: center;
+	}
+
+	.full-page, .footer  {
+		grid-column: 1 / -1;
+		clear: both;
+	}
+}
