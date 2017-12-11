@@ -12,4 +12,5 @@ doi = ""
 access_url = ""
 pdf_url = ""
 slides = ""
+poster = ""
 +++

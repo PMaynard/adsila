@@ -13,10 +13,11 @@
     <p>{{ delimit .Params.keywords ", " }}</p>
 
     <p><span class="button {{ lower .Params.type }}">{{ .Params.type }}</span> [
-    	{{ if not (eq .Params.doi "") }}<a target="_BLANK" href="{{ .Params.doi }}">DOI</a>{{ end }}
+    	{{ if not (eq .Params.doi "") }}<a target="_BLANK" href="{{ .Params.doi }}">DOI</a> {{ end }}
     	{{ if not (eq .Params.access_url "") }}<a target="_BLANK" href="{{ .Params.access_url }}">URL</a> {{ end }}
     	{{ if not (eq .Params.pdf_url "") }}<a target="_BLANK" href="{{ .Params.pdf_url }}">PDF</a> {{ end }}
-    	{{ if not (eq .Params.slides "") }}<a target="_BLANK" href="{{ .Params.slides }}"> Slides</a>{{ end }}
+        {{ if not (eq .Params.slides "") }}<a target="_BLANK" href="{{ .Params.slides }}">Slides</a> {{ end }}
+    	{{ if not (eq .Params.poster "") }}<a target="_BLANK" href="{{ .Params.poster }}">Poster</a> {{ end }}
         {{ if (eq .Params.forthcoming "true") }}<i>Forthcoming</i> {{ end }}
     ]</p>
 <pre>@{{ lower .Params.type }}{
