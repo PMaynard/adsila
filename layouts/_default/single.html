@@ -21,7 +21,7 @@
         {{ if (eq .Params.forthcoming "true") }}<i>Forthcoming</i> {{ end }}
     ]</p>
 <pre>@{{ lower .Params.type }}{
- author   = "{{ delimit .Params.authors ", " }}",
+ author   = "{{ delimit .Params.authors " and " }}",
  title 	  = "{{ .Title }}",
  journal  = "{{ .Params.proceedings }}",
  year 	  = "{{ .Params.year }}"{{ if not (eq .Params.doi "") }},
