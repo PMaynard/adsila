@@ -18,6 +18,16 @@ a:hover {
 	color: #E040FB;
 }
 
+::-moz-selection {
+  background: #920000;
+  color: white;
+}
+
+::selection {
+  background: #920000;
+  color: white;
+}
+
 img {
     width: 100%; 
     height: auto;
