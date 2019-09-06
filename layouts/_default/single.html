@@ -22,6 +22,9 @@
     	{{ if not (eq .Params.poster "") }}<a target="_BLANK" href="{{ .Params.poster }}">Poster</a> {{ end }}
         {{ if (eq .Params.forthcoming "true") }}<i>Forthcoming</i> {{ end }}
     ]</p>
+
+
+{{ if not (eq .Params.type "Article") }}
 <pre>@{{ lower .Params.type }}{
  author   = "{{ delimit .Params.authors " and " }}",
  title 	  = "{{ .Title }}",
@@ -30,6 +33,8 @@
  doi 	  = "{{ .Params.doi }}"{{ end }}{{ if not (eq .Params.access_url "") }},
  url 	  = "{{ .Params.access_url }}"{{ end }}
 }</pre>
+{{ end }}
+
 {{ else }}
 <div class="full-page">
 {{ .Content }}
